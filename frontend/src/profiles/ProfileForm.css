@@ -1,0 +1,57 @@
+/* ProfileForm.css */
+
+.ProfileForm {
+    margin: 20px auto;
+    max-width: 400px;
+    /* padding: 15px; */
+
+
+
+   }
+
+  .ProfileForm h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    background-color: #baed12;
+  }
+
+
+
+  .form-label {
+    font-size: 16px;
+  }
+
+  .form-control {
+    width: 100%;
+    /* padding: 10px; */
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    background-color:#78350f;
+    color: #fff;
+    padding: 8px 16px;
+  }
+
+  .btn-primary:hover {
+    background-color: #fbbf24;
+  }
+
+  .d-grid {
+    margin-top: 20px;
+  }
+  .img {
+    /* put around the vertical center of page */
+
+    height: 100%;
+  background-image: url("../image/food.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  }
