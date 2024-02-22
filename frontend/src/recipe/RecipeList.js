@@ -15,8 +15,8 @@ const RecipeList = () => {
   const [items, setItems] = useState([]);
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
-  const [userinfo, setUserInfo] = useState({
-    languages: [],
+  const [recipeinfo, setRecipeInfo] = useState({
+    ingradients: [],
     response: [],
   });
 
@@ -27,29 +27,28 @@ const RecipeList = () => {
     let username = currentUser.username;
     let items = await PantryApi.getItems();
     setItems(items);
-    console.log("I am inside recipe search", items);
   }
 
   const handleChange = (e) => {
     // Destructuring
     const { value, checked } = e.target;
-    const { languages } = userinfo;
+    const { ingradients } = recipeinfo;
 
     console.log(`${value} is ${checked}`);
 
     // Case 1 : The user checks the box
     if (checked) {
-      setUserInfo({
-        languages: [...languages, value],
-        response: [...languages, value],
+      setRecipeInfo({
+        ingradients: [...ingradients, value],
+        response: [...ingradients, value],
       });
     }
 
     // Case 2  : The user unchecks the box
     else {
-      setUserInfo({
-        languages: languages.filter((e) => e !== value),
-        response: languages.filter((e) => e !== value),
+      setRecipeInfo({
+        ingradients: ingradients.filter((e) => e !== value),
+        response: ingradients.filter((e) => e !== value),
       });
     }
   };
@@ -76,7 +75,7 @@ const RecipeList = () => {
     let recipe;
     e.preventDefault();
     {
-      recipe = userinfo.response.toString();
+      recipe = recipeinfo.response.toString();
     }
     setSearch_Query(recipe);
     // setSearch_recipe("");
@@ -158,7 +157,7 @@ const RecipeList = () => {
               <input
                 type="text"
                 name="search"
-                value={userinfo.response}
+                value={recipeinfo.response}
                 onChange={handleChange}
                 placeholder="Search for recipes..."
                 className="w-full py-3 px-4 bg-gray-100
