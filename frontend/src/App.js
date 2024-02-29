@@ -81,8 +81,7 @@ function App() {
     });
     setToken(null);
   }
-  const APP_ID = "7b6c2d47";
-  const APP_KEY = "af40240534cc234b22bad502cf32424f";
+//moved app id and app key to .env 
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
