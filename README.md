@@ -29,9 +29,9 @@ APP_ID and APP_Key are personal info, and they will be stored in environmental v
 
 
 ##### Stack used:
-React
-Node.js
-Express.js
+React,
+Node.js,
+Express.js,
 PostgreSQL
 
 
