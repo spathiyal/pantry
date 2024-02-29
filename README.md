@@ -12,3 +12,26 @@
 
 ##### This pantry app provides a convenient way for users to manage their pantry inventory, ensure nothing goes to waste, and discover new recipes based on the ingredients they already have at home.
 
+##### API:
+Edamam's Recipe Search API lets you integrate a recipe database and faceted recipe search into your websites or mobile applications.
+
+The Edamam B2B API is accessed by sending HTTPS requests on specific URLs as described below. The base URL is https://api.edamam.com, and obtain the full URL by appending request’s path to the base URL, for example, https://api.edamam.com/api/recipes/v2.
+Recipe Search API allows us to search through millions of web recipes and integrate this information into our mobile or web applications.
+
+
+https://api.edamam.com/search?q=${search_query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+
+
+search_ query – It is a selection of pantry items selected by the user to the search bar. 
+
+
+APP_ID and APP_Key are personal info, and they will be stored in environmental variables.
+
+
+##### Stack used:
+React
+Node.js
+Express.js
+PostgreSQL
+
+
