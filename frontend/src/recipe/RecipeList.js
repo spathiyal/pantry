@@ -7,7 +7,8 @@ import Checkbox from "../Checkbox";
 import UserContext from "../auth/UserContext";
 
 const RecipeList = () => {
-  //removed app id and app key and moved to .env file
+  const APP_ID = "7b6c2d47";
+  const APP_KEY = "af40240534cc234b22bad502cf32424f";
   const [food_recipes, setfood_recipes] = useState([]);
   const [search_recipe, setSearch_recipe] = useState("");
   const [search_query, setSearch_Query] = useState("chicken");
@@ -26,6 +27,7 @@ const RecipeList = () => {
     let username = currentUser.username;
     let items = await PantryApi.getItems();
     setItems(items);
+    console.log("line No 30===== ", items);
   }
 
   const handleChange = (e) => {
@@ -61,7 +63,7 @@ const RecipeList = () => {
       `https://api.edamam.com/search?q=${search_query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
-    console.log("data in list", data);
+    console.log("data in list", data.hits);
     setfood_recipes(data.hits);
   };
 
@@ -89,8 +91,8 @@ const RecipeList = () => {
 
   return (
     <div className="img">
-      <div className="bg-amber-700 min-h-screen font-sans">
-        <header className="bg-amber-700 py-4 text-white">
+      <div className=" min-h-screen font-sans">
+        <header className=" py-4 text-white">
           <div className="container mx-auto text-center">
             <h1
               className="text-3xl sm:text-4xl
@@ -186,9 +188,15 @@ const RecipeList = () => {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
                 lg:grid-cols-4 gap-4 font-extrabold text-white"
           >
+            {console.log("Before error")}
             {food_recipes.map((recipe) => (
-              <RecipeCard key={recipe.recipe.label} recipe={recipe.recipe} />
+              <RecipeCard
+                key={recipe.recipe.label}
+                recipe={recipe.recipe}
+                item={search_query}
+              />
             ))}
+            {console.log("after error")}
           </div>
         </div>
       </div>
