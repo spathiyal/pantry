@@ -7,8 +7,7 @@ import Checkbox from "../Checkbox";
 import UserContext from "../auth/UserContext";
 
 const RecipeList = () => {
-  const APP_ID = "7b6c2d47";
-  const APP_KEY = "af40240534cc234b22bad502cf32424f";
+ 
   const [food_recipes, setfood_recipes] = useState([]);
   const [search_recipe, setSearch_recipe] = useState("");
   const [search_query, setSearch_Query] = useState("chicken");
